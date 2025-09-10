@@ -1,25 +1,27 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @import "tailwindcss";
 
-body{
+/* Fix: Scope everything to your app container */
+#root {
     background-color: #a88a6d4a;
+}
+
+#root * {
+    color: #0d542b;
+    font-family: outfit;
 }
 
 @theme {
   --color-primary: #b29171d7;
 }
-*{
-    color: #0d542b;
-}
+
 .active hr{
     @apply block
 }
+
 ::-webkit-scrollbar{
     display: none;
 }
 
-*{
-    font-family: outfit;
-}
+/**copilot help fix the styles  

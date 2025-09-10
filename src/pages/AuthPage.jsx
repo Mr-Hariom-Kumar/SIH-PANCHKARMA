@@ -1,19 +1,37 @@
 import React, { useState } from "react";
 import { Mail, Lock, User, Leaf } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [role, setRole] = useState("patient");
+  const navigate = useNavigate();
+
+  // Dummy authentication handler
+  const handleAuth = (e) => {
+    e.preventDefault();
+
+    // You can later replace this with actual API login/signup
+    if (isLogin) {
+      // Login
+      if (role === "patient") navigate("/home");
+      else navigate("/practitioner-dashboard");
+    } else {
+      // Signup
+      if (role === "patient") navigate("/home");
+      else navigate("/practitioner-dashboard");
+    }
+  };
 
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed w-full relative"
       style={{ backgroundImage: "url('/images/ayurved.jpg')" }}
     >
-      {/* Background Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-white/60"></div>
 
-      {/* Main Content */}
+      {/* Content */}
       <div className="relative z-10 flex flex-col md:flex-row min-h-screen items-center justify-center px-6 md:px-12 lg:px-20 gap-12 py-8">
         {/* Left Section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center">
@@ -26,7 +44,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Right Section (Auth Form) */}
+        {/* Right Section */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div className="w-full max-w-md bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-6 md:p-8 my-8">
             {/* Logo */}
@@ -48,32 +66,24 @@ const Home = () => {
 
             {/* Role Switch */}
             <div className="flex mt-6 bg-green-50 rounded-lg p-1">
-              <button
-                type="button"
-                className={`flex-1 py-2 px-3 rounded-lg font-medium text-center transition-all ${
-                  role === "patient"
-                    ? "bg-white shadow text-green-800"
-                    : "text-green-600 hover:text-green-700 transition-all duration-150 transform active:scale-95 active:bg-green-100 cursor-pointer"
-                }`}
-                onClick={() => setRole("patient")}
-              >
-                Patient
-              </button>
-              <button
-                type="button"
-                className={`flex-1 py-2 px-3 rounded-lg font-medium text-center transition-all ${
-                  role === "practitioner"
-                    ? "bg-white shadow text-green-800"
-                    : "text-green-600 hover:text-green-700 transition-all duration-150 transform active:scale-95 active:bg-green-100 cursor-pointer"
-                }`}
-                onClick={() => setRole("practitioner")}
-              >
-                Practitioner
-              </button>
+              {["patient", "practitioner"].map((r) => (
+                <button
+                  key={r}
+                  type="button"
+                  className={`flex-1 py-2 px-3 rounded-lg font-medium text-center transition-all ${
+                    role === r
+                      ? "bg-white shadow text-green-800"
+                      : "text-green-600 hover:text-green-700 transition-all duration-150 transform active:scale-95 active:bg-green-100 cursor-pointer"
+                  }`}
+                  onClick={() => setRole(r)}
+                >
+                  {r.charAt(0).toUpperCase() + r.slice(1)}
+                </button>
+              ))}
             </div>
 
             {/* Form */}
-            <form className="mt-6 space-y-4">
+            <form className="mt-6 space-y-4" onSubmit={handleAuth}>
               {!isLogin && (
                 <div>
                   <label className="block text-sm font-medium text-green-700 mb-2">
@@ -85,6 +95,7 @@ const Home = () => {
                       type="text"
                       placeholder="Enter your name"
                       className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                      required
                     />
                   </div>
                 </div>
@@ -100,6 +111,7 @@ const Home = () => {
                     type="email"
                     placeholder="Enter your email"
                     className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    required
                   />
                 </div>
               </div>
@@ -114,6 +126,7 @@ const Home = () => {
                     type="password"
                     placeholder="Enter your password"
                     className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    required
                   />
                 </div>
               </div>
@@ -129,6 +142,7 @@ const Home = () => {
                       type="password"
                       placeholder="Confirm your password"
                       className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                      required
                     />
                   </div>
                 </div>
@@ -142,7 +156,7 @@ const Home = () => {
               </button>
             </form>
 
-            {/* Switch between Login & Signup */}
+            {/* Switch Login / Signup */}
             <p className="text-sm text-center text-green-600 mt-6">
               {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
               <span
