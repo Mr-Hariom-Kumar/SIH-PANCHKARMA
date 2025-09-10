@@ -59,10 +59,10 @@ const FeaturesCarousel = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-96 bg-gradient-to-br from-[#fdf6e3] via-[#f0ead2] to-[#e9edc9]">
-      <div className="flex items-center gap-6 relative w-full max-w-7xl justify-center">
-        {/* Far left card */}
-        <motion.div className="w-48 h-56 bg-[#fefae0] rounded-lg shadow p-4 flex flex-col items-center text-center scale-75 opacity-50">
+    <div className="flex items-center justify-center min-h-[28rem] bg-gradient-to-br from-[#fdf6e3] via-[#f0ead2] to-[#e9edc9] px-4">
+      <div className="flex items-center gap-4 sm:gap-6 relative w-full max-w-7xl justify-center">
+        {/* Far left card - hidden on small & medium */}
+        <motion.div className="hidden lg:flex w-48 h-56 bg-[#fefae0] rounded-lg shadow p-4 flex-col items-center text-center scale-75 opacity-50">
           <div className="mb-2">{getFeature(-2).icon}</div>
           <h3 className="text-sm font-bold text-green-800">
             {getFeature(-2).title}
@@ -70,8 +70,8 @@ const FeaturesCarousel = () => {
           <p className="text-gray-600 text-xs mt-1">{getFeature(-2).desc}</p>
         </motion.div>
 
-        {/* Left card */}
-        <motion.div className="w-56 h-64 bg-[#e9edc9] rounded-xl shadow-md p-5 flex flex-col items-center text-center scale-90 opacity-70">
+        {/* Left card - visible from md */}
+        <motion.div className="hidden md:flex w-56 h-64 bg-[#e9edc9] rounded-xl shadow-md p-5 flex-col items-center text-center scale-90 opacity-70">
           <div className="mb-3">{getFeature(-1).icon}</div>
           <h3 className="text-md font-bold text-green-800">
             {getFeature(-1).title}
@@ -79,7 +79,7 @@ const FeaturesCarousel = () => {
           <p className="text-gray-700 text-sm mt-2">{getFeature(-1).desc}</p>
         </motion.div>
 
-        {/* Center card */}
+        {/* Center card - always visible */}
         <motion.div
           key={index}
           className="w-72 h-80 bg-[#d8e2dc] rounded-2xl shadow-xl p-6 flex flex-col items-center text-center z-10"
@@ -95,8 +95,8 @@ const FeaturesCarousel = () => {
           <p className="text-gray-800 mt-2">{getFeature(0).desc}</p>
         </motion.div>
 
-        {/* Right card */}
-        <motion.div className="w-56 h-64 bg-[#e9edc9] rounded-xl shadow-md p-5 flex flex-col items-center text-center scale-90 opacity-70">
+        {/* Right card - visible from md */}
+        <motion.div className="hidden md:flex w-56 h-64 bg-[#e9edc9] rounded-xl shadow-md p-5 flex-col items-center text-center scale-90 opacity-70">
           <div className="mb-3">{getFeature(1).icon}</div>
           <h3 className="text-md font-bold text-green-800">
             {getFeature(1).title}
@@ -104,8 +104,8 @@ const FeaturesCarousel = () => {
           <p className="text-gray-700 text-sm mt-2">{getFeature(1).desc}</p>
         </motion.div>
 
-        {/* Far right card */}
-        <motion.div className="w-48 h-56 bg-[#fefae0] rounded-lg shadow p-4 flex flex-col items-center text-center scale-75 opacity-50">
+        {/* Far right card - hidden on small & medium */}
+        <motion.div className="hidden lg:flex w-48 h-56 bg-[#fefae0] rounded-lg shadow p-4 flex-col items-center text-center scale-75 opacity-50">
           <div className="mb-2">{getFeature(2).icon}</div>
           <h3 className="text-sm font-bold text-green-800">
             {getFeature(2).title}

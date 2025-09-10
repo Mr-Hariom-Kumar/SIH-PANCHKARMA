@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react"; // Icons for hamburger and close
 
 const MainHeader = () => {
-  const navigate = useNavigate(); // Add this to enable navigation on logo click
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -12,19 +14,16 @@ const MainHeader = () => {
           {/* Logo */}
           <div
             className="flex items-center cursor-pointer"
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/")}
           >
             <img
               src={assets.logo2}
               alt="AyurSutra Logo"
               className="w-32 h-12 object-contain"
             />
-            {/* <span className="ml-2 text-2xl font-bold text-green-800 hidden sm:inline">
-              AyurSutra
-            </span> */}
           </div>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
@@ -58,23 +57,94 @@ const MainHeader = () => {
             </a>
           </div>
 
-          {/* Right Side Buttons */}
+          {/* Desktop Right Side Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="#login"
+            <button
+              onClick={() => navigate("/Auth")}
               className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
             >
               Login
-            </a>
-            <a
-              href="#appointment"
+            </button>
+            <button
+              onClick={() => navigate("/Auth")}
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Book Appointment
-            </a>
+            </button>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 focus:outline-none"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-lg px-4 py-3 space-y-4">
+          <a
+            href="#home"
+            className="block text-gray-700 hover:text-green-600 transition-colors duration-200"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            className="block text-gray-700 hover:text-green-600 transition-colors duration-200"
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </a>
+          <a
+            href="#features"
+            className="block text-gray-700 hover:text-green-600 transition-colors duration-200"
+            onClick={() => setIsOpen(false)}
+          >
+            Features
+          </a>
+          <a
+            href="#testimonials"
+            className="block text-gray-700 hover:text-green-600 transition-colors duration-200"
+            onClick={() => setIsOpen(false)}
+          >
+            Testimonials
+          </a>
+          <a
+            href="#contact"
+            className="block text-gray-700 hover:text-green-600 transition-colors duration-200"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </a>
+
+          {/* Mobile Login & Appointment */}
+          <button
+            onClick={() => {
+              navigate("/Auth");
+              setIsOpen(false);
+            }}
+            className="block w-full text-left text-gray-700 hover:text-green-600 transition-colors duration-200"
+          >
+            Login
+          </button>
+          <button
+            onClick={() => {
+              navigate("/Auth");
+              setIsOpen(false);
+            }}
+            className="block w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-center transition-colors duration-200"
+          >
+            Book Appointment
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
