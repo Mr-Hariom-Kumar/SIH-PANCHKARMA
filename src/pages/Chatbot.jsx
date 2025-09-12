@@ -67,7 +67,7 @@ const Chatbot = () => {
         setIsBotTyping(true);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/chat', { message });
+            const response = await axios.post('https://sih-panchkarma-1.onrender.com/api/chat', { message });
             const botMessage = { role: 'bot', content: response.data.response };
 
             // Simulate a small delay for the bot response
