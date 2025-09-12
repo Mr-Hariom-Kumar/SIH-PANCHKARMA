@@ -48,6 +48,11 @@ export  const images  =  [
  
   hero3,
 ];
+export  const Images  =  [
+    hero1,
+    hero2,
+  hero3,
+];
 export const assets = {
     appointment_img,
     header_img,

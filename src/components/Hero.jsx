@@ -1,4 +1,4 @@
-import {images} from '../assets/assets'
+import {Images} from '../assets/assets'
 import {Link} from 'react-router-dom' ; 
 import React, { useEffect, useState } from "react";
 const Hero = () => {
@@ -6,7 +6,7 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
+      setCurrentImage((prev) => (prev + 1) % Images.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -15,7 +15,7 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
-        {images.map((img, index) => (
+        {Images.map((img, index) => (
           <img
             key={index}
             src={img}
