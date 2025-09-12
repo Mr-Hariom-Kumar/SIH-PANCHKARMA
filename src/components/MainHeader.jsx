@@ -58,20 +58,21 @@ const MainHeader = () => {
           </div>
 
           {/* Desktop Right Side Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/Auth")}
-              className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => navigate("/Auth")}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-            >
-              Book Appointment
-            </button>
-          </div>
+         <div className="hidden md:flex items-center space-x-4">
+  <button
+    onClick={() => navigate("/Auth")}
+    className="text-gray-700 border border-green-600 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+  >
+    Login
+  </button>
+  <button
+    onClick={() => navigate("/Auth")}
+    className="bg-green-600 text-white hover:bg-white hover:text-green-600 hover:border hover:border-green-600 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+  >
+    Book Appointment
+  </button>
+</div>
+
 
           {/* Mobile Hamburger */}
           <div className="md:hidden">

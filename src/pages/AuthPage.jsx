@@ -150,7 +150,7 @@ const Home = () => {
 
               <button
                 type="submit"
-                className="w-full bg-green-800 text-white py-3 rounded-lg font-semibold shadow hover:bg-green-900 transition-colors duration-200"
+                className="w-full bg-green-800 text-white py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition-colors duration-200 cursor-pointer"
               >
                 {isLogin ? "Sign In" : "Sign Up"}
               </button>

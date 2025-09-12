@@ -45,8 +45,7 @@ import ayurved from './ayurved.jpg'
 
 
 export  const images  =  [
-  hero1,
-  hero2,
+ 
   hero3,
 ];
 export const assets = {
