@@ -38,7 +38,7 @@ const Testimonials = () => {
                 <FaUser className="text-green-800 font-semibold" />
               </div>
               <div className="ml-4">
-                <h4 className="font-semibold text-gray-900">Nayak~The Great</h4>
+                <h4 className="font-semibold text-gray-900">Binayak</h4>
                 <p className="text-sm text-gray-600">San Francisco</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ const Testimonials = () => {
               </div>
               <div className="ml-4">
                 <h4 className="font-semibold text-gray-900">Nimit</h4>
-                <p className="text-sm text-gray-600">Pakistan</p>
+                <p className="text-sm text-gray-600">Rajasthan</p>
               </div>
             </div>
             <p className="text-gray-700 italic mb-4">
@@ -74,8 +74,8 @@ const Testimonials = () => {
                 <FaUser className="text-green-800 font-semibold" />
               </div>
               <div className="ml-4">
-                <h4 className="font-semibold text-gray-900">Hariom </h4>
-                <p className="text-sm text-gray-600">Gaya</p>
+                <h4 className="font-semibold text-gray-900">Pradip </h4>
+                <p className="text-sm text-gray-600">kolkata</p>
               </div>
             </div>
             <p className="text-gray-700 italic mb-4">
@@ -91,8 +91,8 @@ const Testimonials = () => {
                 <FaUser className="text-green-800 font-semibold" />
               </div>
               <div className="ml-4">
-                <h4 className="font-semibold text-gray-900">Nayak</h4>
-                <p className="text-sm text-gray-600">San Francisco</p>
+                <h4 className="font-semibold text-gray-900">Tuhit</h4>
+                <p className="text-sm text-gray-600">Mumbai</p>
               </div>
             </div>
             <p className="text-gray-700 italic mb-4">
@@ -109,7 +109,7 @@ const Testimonials = () => {
               </div>
               <div className="ml-4">
                 <h4 className="font-semibold text-gray-900">Nimit</h4>
-                <p className="text-sm text-gray-600">Pakistan</p>
+                <p className="text-sm text-gray-600">Gujrat</p>
               </div>
             </div>
             <p className="text-gray-700 italic mb-4">
