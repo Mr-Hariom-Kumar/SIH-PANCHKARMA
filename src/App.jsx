@@ -11,6 +11,7 @@ import Landing from "./pages/Landing";
 import AuthPage from "./pages/AuthPage";
 import PractitionerDashboard from "./pages/PractitionerDashboard";
 import Chatbot from "./pages/Chatbot";
+import BookAppointment from "./components/BookAppointment";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/my-appointments" element={<MyAppointments />} />
         <Route path="/appointment/:docId" element={<Appointment />} />
         <Route path="/chat" element={<Chatbot />} />
+        <Route path="/book-appointment" element={<BookAppointment />} />
         {/* Use the actual PractitionerDashboard component here */}
         <Route
           path="/practitioner-dashboard"
