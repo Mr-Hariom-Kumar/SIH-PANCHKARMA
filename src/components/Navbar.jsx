@@ -39,7 +39,7 @@ const Navbar = () => {
                         <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4 '>
                             <p onClick={()=>navigate('/my-profile')} className='hover:bg-primary hover:text-white cursor-pointer w-full px-3 py-2 rounded '>My Profile</p>
                             <p onClick={()=>navigate('/my-appointments')} className='hover:bg-primary hover:text-white cursor-pointer w-full px-3 py-2 rounded '>My Appointments</p>
-                            <p onClick={()=>setToken(false)} className='hover:bg-primary hover:text-white cursor-pointer w-full px-3 py-2 rounded '>Logout</p>
+                            <p onClick={()=> navigate('/') } className='hover:bg-primary hover:text-white cursor-pointer w-full px-3 py-2 rounded '>Logout</p>
                         </div>
                     </div>
                 </div>: 
