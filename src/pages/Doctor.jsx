@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import Home from "./Home";
 
 const Doctor = () => {
   const { speciality } = useParams();
@@ -21,7 +22,21 @@ const Doctor = () => {
   }, [doctors, speciality]);
   return (
     <div>
-      <p className="text-gray-600">Browse through the docotrs specialist. </p>
+      <button
+        onClick={() => navigate("/home")}
+        className="fixed top-4 left-4  cursor-pointer flex items-center gap-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition z-50"
+      >
+        <span className="text-sm">Back</span>
+      </button>
+      <button
+        onClick={() => navigate("/")}
+        className="fixed top-4 right-4 cursor-pointer flex items-center gap-1 px-4 py-2 bg-red-400 text-white rounded hover:bg-red-700 transition z-50"
+      >
+        <span className="text-sm">Logout</span>
+      </button>
+      <p className="text-gray-600 text-center">
+        Browse through the docotrs specialist.{" "}
+      </p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5 className={sm:}">
         <div>
           <p

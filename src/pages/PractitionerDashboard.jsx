@@ -21,7 +21,7 @@ import {
   BarChart,
   Bar,
 } from "recharts";
-
+import { useNavigate } from "react-router-dom";
 /**
  * PractitionerDashboard.jsx
  * - Single-file dashboard with Dashboard, Appointments, Patients, Schedule, Analytics, Profile
@@ -41,7 +41,7 @@ const PractitionerDashboard = () => {
     { title: "Completed Sessions", value: 45 },
     { title: "Pending Feedback", value: 12 },
   ];
-
+  const navigate = useNavigate();
   // ---------- Dummy Appointments ----------
   const appointments = [
     {
@@ -234,6 +234,12 @@ const PractitionerDashboard = () => {
 
   return (
     <div className="flex h-screen bg-gray-100">
+      <button
+        onClick={() => navigate("/")}
+        className="fixed right-0.5 cursor-pointer flex items-center gap-1 px-4 py-2 bg-red-400 text-white rounded hover:bg-red-700 transition z-50"
+      >
+        <span className="text-sm">Logout</span>
+      </button>
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-md flex flex-col">
         <div className="p-6 text-2xl font-bold text-green-800">AyurSutra</div>

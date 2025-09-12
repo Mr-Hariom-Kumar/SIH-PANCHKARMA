@@ -8,10 +8,11 @@ const Footer = () => {
         <div>
           <img className="mb-5 w-40" src={assets.logo2} alt="" />
           <p className="w-full md:w-2/3 text-gray-600 leading-6 ">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam amet
-            beatae molestiae voluptatibus provident. Delectus minima omnis minus
-            ex impedit illo rerum ipsa rem, obcaecati unde reiciendis ad cum
-            doloremque.
+            AyurSutra is your trusted partner in holistic wellness, combining
+            5000-year-old Ayurvedic principles with cutting-edge technology. We
+            offer personalized treatment plans, authentic Panchakarma therapies,
+            and expert guidance to help you achieve optimal health naturally.
+            Discover the path to balanced living with AyurSutra.
           </p>
         </div>
         {/* center */}
@@ -29,13 +30,15 @@ const Footer = () => {
           <p className="text-sm font-medium mb-5">GET IN TOUCH</p>
           <ul className="text-gray-600 flex flex-col gap-2">
             <li>+91 123-456-7890</li>
-            <li>Prescripto@gmail.com</li>
+            <li>ayursutra@gmail.com</li>
           </ul>
         </div>
       </div>
       <div>
         <hr />
-        <p className="py-5 text-sm text-center">Copyright 2025@ prescripto-All Right Reserved.</p>
+        <p className="py-5 text-sm text-center">
+          Copyright 2025@ AyurSutra-All Right Reserved.
+        </p>
       </div>
     </div>
   );

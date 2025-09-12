@@ -11,6 +11,7 @@ import {
   Star,
   Leaf,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const BookAppointment = () => {
     concerns: "",
     experience: "",
   });
-
+  const navigate = useNavigate();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const treatments = [
@@ -147,7 +148,18 @@ const BookAppointment = () => {
           </div>
         </div>
       </div> */}
-
+      <button
+        onClick={() => navigate("/home")}
+        className="fixed top-4 left-4  cursor-pointer flex items-center gap-1 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition z-50"
+      >
+        <span className="text-sm">Home</span>
+      </button>
+      <button
+        onClick={() => navigate("/")}
+        className="fixed top-4 right-4 cursor-pointer flex items-center gap-1 px-4 py-2 bg-red-400 text-white rounded hover:bg-red-700 transition z-50"
+      >
+        <span className="text-sm">Logout</span>
+      </button>
       <div className="max-w-6xl mx-auto p-4 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
