@@ -4,6 +4,7 @@ import SpecialityMenu from "../components/SpecialityMenu";
 import TopDoctors from "../components/TopDoctors";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
+import ChatBubble from "../components/Chatbubble";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <SpecialityMenu />
       <TopDoctors />
       <Banner />
+      <ChatBubble/> 
     </div>
   );
 };

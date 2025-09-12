@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
 import AuthPage from "./pages/AuthPage";
 import PractitionerDashboard from "./pages/PractitionerDashboard";
+import Chatbot from "./pages/Chatbot";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/my-profile" element={<MyProfile />} />
         <Route path="/my-appointments" element={<MyAppointments />} />
         <Route path="/appointment/:docId" element={<Appointment />} />
+        <Route path="/chat" element={<Chatbot />} />
         {/* Use the actual PractitionerDashboard component here */}
         <Route
           path="/practitioner-dashboard"
